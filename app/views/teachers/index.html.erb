@@ -3,18 +3,24 @@
 <table>
   <tr>
     <th>ID</th>
-    <th>Name</th>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Email</th>
     <th>Phone</th>
     <th>City</th>
-    <th>St</th>
+    <th>State</th>
+    <th>Website</th>
   </tr>
 <% @teachers.each do |teacher| %>
   <tr>
     <td><%= teacher.id %></td>
-    <td><%= teacher.name %></td>
+    <td><%= teacher.company %></td>
+    <td><%= teacher.contact %></td>
+    <td><%= teacher.email %></td>
     <td><%= teacher.phone %></td>
     <td><%= teacher.city %></td>
     <td><%= teacher.state %></td>
+    <td><%= teacher.website %></td>
   </tr>
 <% end %>
 </table>

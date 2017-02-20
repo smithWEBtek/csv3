@@ -10,13 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220005937) do
+ActiveRecord::Schema.define(version: 20170220190251) do
+
+  create_table "scrapes", force: :cascade do |t|
+    t.string   "url"
+    t.string   "teacher_name"
+    t.string   "teacher_phone"
+    t.string   "teacher_email"
+    t.string   "teacher_company"
+    t.string   "teacher_website"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "teachers", force: :cascade do |t|
-    t.string   "name"
+    t.string   "company"
+    t.string   "contact"
     t.string   "city"
     t.string   "state"
     t.string   "phone"
+    t.string   "website"
+    t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
