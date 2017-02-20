@@ -1,0 +1,24 @@
+<h1>Teachers Imported List</h1>
+ 
+<%= flash[:notice] %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phome</th>
+      <th>City</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teachers.each do |teacher| %>
+      <tr>
+        <td><%= teacher.name %></td>
+        <td><%= teacher.phome %></td>
+        <td><%= teacher.city %></td>
+        <td><%= teacher.state %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div>

@@ -1,0 +1,20 @@
+<h1>Teachers</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>City</th>
+    <th>St</th>
+  </tr>
+<% @teachers.each do |teacher| %>
+  <tr>
+    <td><%= teacher.id %></td>
+    <td><%= teacher.name %></td>
+    <td><%= teacher.phone %></td>
+    <td><%= teacher.city %></td>
+    <td><%= teacher.state %></td>
+  </tr>
+<% end %>
+</table>
