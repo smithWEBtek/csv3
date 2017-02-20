@@ -4,7 +4,7 @@ class Teacher < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   def self.import
-    filename = File.join Rails.root, "teachers.csv"
+    filename = File.join Rails.root, "./lib/assets/teachers.csv"
     CSV.foreach(filename, headers: true) do |row|
       name, city, state, phone = row
       teacher_hash = {name: row[0], city: row[1], state: row[2], phone: row[3]}
