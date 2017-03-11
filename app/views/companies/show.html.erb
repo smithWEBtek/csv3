@@ -1,37 +1,27 @@
 <h1>Company</h1>
 
-<%= form_for @company do |company| %>
   <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    name:   <%= @company.name %>
   </p>
   <p>
-    <%= f.label :about %>
-    <%= f.text_field :about %>
+    about:  <%= @company.about %>
   </p>
   <p>
-    <%= f.label :city %>
-    <%= f.text_field :city %>
+    city:   <%= @company.city %>
   </p>
   <p>
-    <%= f.label :state %>
-    <%= f.text_field :state %>
+    state:  <%= @company.state %>
   </p>
   <p>
-    <%= f.label :url %>
-    <%= f.text_field :url %>
+    url:  <%= @company.url %>
   </p>  
   <p>
-    <%= f.label :employees %>
-    <%= f.text_field :employees %>
+    employees:  <%= @company.employees %>
   </p>
   <p>
-    <%= f.label :revenue %>
-    <%= f.text_field :revenue %>
+    revenue:  <%= @company.revenue %>
   </p>
   <p>
-    <%= f.label :age %>
-    <%= f.text_field :age %>
+    age:  <%= @company.age %>
   </p>
-
-<% end %>
+ 

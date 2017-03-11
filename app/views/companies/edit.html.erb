@@ -1,6 +1,6 @@
 <h1>Edit Company</h1>
 
-<%= form_for @company do |company| %>
+<%= form_for @company do |f| %>
   <p>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -33,5 +33,5 @@
     <%= f.label :age %>
     <%= f.text_field :age %>
   </p>
-
+<%= f.submit %>
 <% end %>
