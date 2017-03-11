@@ -14,7 +14,7 @@ class Scrape < ApplicationRecord
       }
       devcos.push(company)
     end
-    Company.import_list(devcos)
+    Company.import(devcos)
     if !@parse_page.css('.pager-next a').empty?
       url_next 
     else
