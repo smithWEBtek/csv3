@@ -1,2 +1,0 @@
-class ScrapersController < ApplicationController
-end

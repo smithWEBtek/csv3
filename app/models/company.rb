@@ -1,4 +1,8 @@
 class Company < ApplicationRecord
+  has_many :contacts
+  has_many :actions
+  has_many :jobs
+  
   def self.import(list)
     list.each do |company|
       new_company = Company.find_or_create_by(name: company[:name], url: company[:url])

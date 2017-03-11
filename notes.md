@@ -14,10 +14,10 @@ Contact
       belongs_to :company
       has_many :actions
       
-      rails g migration CreateContacts company_id:integer name:string role:string about:text email:string phone:string linked_in:string twitter:string blog:string website:string 
+      rails g migration CreateContacts company_id:integer name:string role:string about:text email:string phone:string linkedin:string twitter:string blog:string website:string 
 
 Actions
-      act_type: call email meeting website gitcommit blogpost
+      act_type: (call email meeting website gitcommit blogpost)
       act_date: 
       act_result: 
       act_next: 
@@ -30,16 +30,10 @@ Actions
       belongs_to :company
       belongs_to :job
       
-      rails g migration CreateActions 
-      act_type:string 
-      act_date:date 
-      act_result:text 
-      act_next:string 
-      act_next_due_date:date 
-      contact_id:integer
+      rails g migration CreateActions act_type:string act_date:date act_result:text act_next:string act_next_due_date:date contact_id:integer
 
 Job
-      title description link company_id contact_id instructions requirements
+      title description url company_id contact_id instructions requirements
       scores(ab)
       a=1-5 rank
       b=%   weight
@@ -50,12 +44,20 @@ Job
       10    location: & commute
       5     salary:
       
-      rails g migration CreateJobs title:string description:text url:string company_id contact_id learning:integer skills:integer networking:integer location:integer salary:integer
+      rails g migration CreateJobs title:string description:text url:string company_id contact_id instructions:text requirements:text learning:integer skills:integer networking:integer location:integer salary:integer
       
       has_many :actions
       has_many :contacts
       belongs_to :company
 
+Tools
+      use github API to get weekly commits
+      generate action plans to output to excel
+      generaet excel data for updating the Job Tracker Magic Spreadsheet
+      excel csv staging file for newly acquired leads
+      upload via import CSV method
+      alert system based on actions and dates
+      job quadrant graph based on scores
 
 
 Activity Dashboard
@@ -79,15 +81,7 @@ Job Search Activity
       - Blank for No"
       Next Step
       Status
-
-Tools
-      use github API to get weekly commits
-      generate action plans to output to excel
-      generaet excel data for updating the Job Tracker Magic Spreadsheet
-      excel csv staging file for newly acquired leads
-      upload via import CSV method
-      alert system based on actions and dates
-
+ 
 Git Commits and Blog Posts
       Timestamp (PLS DO NOT UPDATE) 
       Date  How Many Git Commits or Blog Posts did you do this week? 

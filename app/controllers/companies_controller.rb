@@ -1,5 +1,4 @@
 class CompaniesController < ApplicationController
-
   def index
     @companies = Company.all.order(:name)
   end
@@ -15,22 +14,22 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     if @company.save
-      flash[:message] = "Company created."
+      flash[:message] = 'Company created.'
       redirect_to company_path(@company)
     else
       render :new
     end
   end
 
-  def edit 
+  def edit
     @company = Company.find_by_id(params[:id])
   end
 
   def update
     @company = Company.find_by_id(params[:id])
-    @company.updaet(company_params)
+    @company.update(company_params)
     if @company.save
-      flash[:message] = "Company updated."
+      flash[:message] = 'Company updated.'
       redirect_to company_path(@company)
     else
       render :edit
@@ -43,8 +42,9 @@ class CompaniesController < ApplicationController
     redirect_to root_path
   end
 
-  private 
+  private
+
   def company_params
-    params.require(:company).permit(:name, :url)
+    params.require(:company).permit(:name, :about, :city, :state, :url, :employees, :revenue, :age)
   end
 end
