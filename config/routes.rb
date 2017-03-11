@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :scrapers
-  resources :teachers
-  get '/import', to: 'teachers#import'
-  get '/truncate', to: 'teachers#truncate'
+
+  resources :scrapers, :teachers, :companies
+  get '/import_new_companies', to: 'tools#import'
+  get '/trunc_reset', to: 'companies#trunc_reset'
 
 end
