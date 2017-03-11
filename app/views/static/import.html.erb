@@ -1,8 +1,0 @@
-<h1>Teacher Import Page</h1>
- 
-<h4>Import Teacher Data</h4>
-  <%= form_tag import_users_path, multipart: true %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
-  <% end %>
-</div>

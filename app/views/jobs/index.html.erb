@@ -1,0 +1,33 @@
+<h1>Jobs</h1>
+<table>
+  <th>
+    <tr>
+      <td>company</td>
+      <td>title</td>
+      <td>description</td>
+      <td>url</td>
+      <td>instructions</td>
+      <td>requirements</td>
+      <td>learning</td>
+      <td>skills</td>
+      <td>networking</td>
+      <td>location</td>
+      <td>salary</td>
+    </tr>
+  </th>
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
+    <td><%= contact.title %></td>
+    <td><%= contact.description %></td>
+    <td><%= contact.url %></td>
+    <td><%= contact.instructions %></td>
+    <td><%= contact.requirements %></td>
+    <td><%= contact.learning %></td>
+    <td><%= contact.skills %></td>
+    <td><%= contact.networking %></td>
+    <td><%= contact.location %></td>
+    <td><%= contact.salary %></td>
+  </tr>
+<% end %>
+</table>

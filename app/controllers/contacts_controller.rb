@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.all.order(:name)
+    @contacts = Contact.all.order(:last_name)
   end
 
   def show
@@ -9,6 +9,7 @@ class ContactsController < ApplicationController
 
   def new
     @contact = Contact.new
+    @company = Company.new
   end
 
   def create
@@ -45,6 +46,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :role, :about, :email, :phone, :linkedin, :twitter, :blog, :website)
+    params.require(:contact).permit(:company_id, :first_name, :last_name, :role, :about, :email,
+                   :phone, :linkedin, :twitter, :blog, :website)
   end
 end

@@ -1,0 +1,33 @@
+<h1>Contacts</h1>
+<table>
+  <th>
+    <tr>
+      <td>company</td>
+      <td>first_name</td>
+      <td>last_name</td>
+      <td>role</td>
+      <td>about</td>
+      <td>email</td>
+      <td>phone</td>
+      <td>linkedin</td>
+      <td>twitter</td>
+      <td>blog</td>
+      <td>website</td>
+    </tr>
+  </th>
+<% @contacts.each do |contact| %>
+  <tr>
+    <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
+    <td><%= contact.first_name %></td>
+    <td><%= contact.last_name %></td>
+    <td><%= contact.role %></td>
+    <td><%= contact.about %></td>
+    <td><%= contact.email %></td>
+    <td><%= contact.phone %></td>
+    <td><%= contact.linkedin %></td>
+    <td><%= contact.twitter %></td>
+    <td><%= contact.blog %></td>
+    <td><%= contact.website %></td>
+  </tr>
+<% end %>
+</table>
