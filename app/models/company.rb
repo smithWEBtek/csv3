@@ -6,6 +6,7 @@ class Company < ApplicationRecord
   def self.import(list)
     list.each do |company|
       new_company = Company.find_or_create_by(name: company[:name], url: company[:url])
+      
       new_company.save
     end
   end
