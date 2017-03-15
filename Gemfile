@@ -4,6 +4,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
+gem 'sprockets', '~> 3.0'
 gem 'pry-rails'
 gem 'watir'
 gem 'nokogiri', '>=1.5.9'
