@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'pdf-reader'
+
+gem "bootstrap-sass"
+
 gem 'sprockets', '~> 3.0'
 gem 'pry-rails'
 gem 'watir'

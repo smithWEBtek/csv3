@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315044105) do
+ActiveRecord::Schema.define(version: 20170316162326) do
 
   create_table "actions", force: :cascade do |t|
     t.string   "act_type"
@@ -68,6 +68,13 @@ ActiveRecord::Schema.define(version: 20170315044105) do
     t.integer "networking",   default: 0
     t.integer "location",     default: 0
     t.integer "salary",       default: 0
+  end
+
+  create_table "pdfs", force: :cascade do |t|
+    t.text     "name"
+    t.string   "location",   default: "app/assets/pdfs"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
 end

@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    Ascii85 (1.0.2)
     actioncable (5.0.1)
       actionpack (= 5.0.1)
       nio4r (~> 1.2)
@@ -38,7 +39,13 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    afm (0.2.2)
     arel (7.1.4)
+    autoprefixer-rails (6.7.7)
+      execjs
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
     childprocess (0.6.2)
@@ -58,6 +65,7 @@ GEM
     ffi (1.9.17)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    hashery (2.1.2)
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     i18n (0.8.0)
@@ -86,6 +94,12 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    pdf-reader (2.0.0)
+      Ascii85 (~> 1.0.0)
+      afm (~> 0.2.1)
+      hashery (~> 2.0)
+      ruby-rc4
+      ttfunk
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -125,6 +139,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    ruby-rc4 (0.1.5)
     rubyzip (1.2.1)
     sass (3.4.23)
     sass-rails (5.0.6)
@@ -154,6 +169,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (2.0.6)
+    ttfunk (1.5.0)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
@@ -177,6 +193,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
   httparty
@@ -184,6 +201,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   nokogiri (>= 1.5.9)
+  pdf-reader
   pry-rails
   puma (~> 3.0)
   pundit

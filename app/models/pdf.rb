@@ -1,0 +1,26 @@
+require 'pdf/reader'
+require 'open-uri'
+
+class Pdf < ApplicationRecord
+ 
+  def self.read_pdf
+    file = File.open(self, "rb")
+    PDF::Reader.open(self) do |reader|
+      reader.pages.each do |page|
+        puts page.text
+      end
+    end 
+  end
+
+  def self.open_pdf
+    File.open("./assets/pdfs/verano.pdf", "rb") do |io|
+      reader = PDF::Reader.new(io)
+      puts reader.info
+    end
+  end
+
+  def add_pdf_to_folder
+    # magic ruby code that adds a pdf to the app/assets/pdfs folder 
+    # using the 'new' form, and the 'file_field' form helper
+  end
+end
