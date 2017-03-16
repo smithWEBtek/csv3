@@ -19,8 +19,17 @@ class Pdf < ApplicationRecord
     end
   end
 
-  def add_pdf_to_folder
+  def import_pdfs
     # magic ruby code that adds a pdf to the app/assets/pdfs folder 
     # using the 'new' form, and the 'file_field' form helper
   end
+
+  def self.add_pdfs
+    @pdfs = Dir.glob("app/assets/pdfs/*.pdf")
+    @pdfs.map! do |pdf|
+      pdf_name = pdf.gsub("app/assets/pdfs/", '')
+      new_pdf = Pdf.find_or_create_by(name: pdf_name)
+    end
+  end
+
 end

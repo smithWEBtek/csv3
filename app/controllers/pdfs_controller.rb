@@ -1,11 +1,8 @@
 class PdfsController < ApplicationController
 
-  def add_all_from_pdfs_folder
-    @pdfs = Dir.glob("app/assets/pdfs/*.pdf")
-    @pdfs.map! do |pdf|
-      pdf_name = pdf.gsub("app/assets/pdfs/", '')
-      new_pdf = Pdf.find_or_create_by(name: pdf_name)
-    end
+  def add_pdfs
+    Pdf.add_pdfs
+    redirect_to pdfs_path
   end
 
   def index
