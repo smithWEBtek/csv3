@@ -7,15 +7,20 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'bootstrap' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'tools' %>
   </head>
 
   <body>
 
-<%= link_to "Index Companies", companies_path %> | 
+<%= link_to "Index Companies", companies_path, class: 'load_companies' %> | 
 <%= link_to "Import Companies", import_new_companies_path %> | 
 <%= link_to "Truncate Companies", trunc_reset_path %>
 <hr>
-<%= link_to "Contacts", contacts_path %> | 
+Ajax contacts:
+<div id='ajax-contacts'></div>
+<hr>
+<%= link_to "Contacts", contacts_path, class: 'load_contacts'  %> | 
+<%= link_to "New contact", new_contact_path %> | 
 <%= link_to "Jobs", jobs_path %> | 
 <%= link_to "Actions", actions_path %>
 <hr>
