@@ -1,17 +1,17 @@
 class ContactsController < ApplicationController
   def index
     @contacts = Contact.all.order(:last_name)
-    # render 'contacts/index', layout: false
+    render 'contacts/index', layout: false
     # render layout: false
-    render json: @contacts
+    # render json: @contacts
   end
 
   def show
     @contact = Contact.find_by_id(params[:id])
-    # render 'contacts/show', layout: false
+    render 'contacts/show', layout: false
     # render layout: false
-    render json: @contact
-  endb
+    # render json: @contact
+  end
 
   def new
     @contact = Contact.new

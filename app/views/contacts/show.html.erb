@@ -1,11 +1,10 @@
-<h1>Contact show</h1>
-  <p>
-    company:  <%= link_to @contact.company.name, company_path(@contact.company_id) %>
-  </p>
-  <p id='full-name'>
-    full_name:   <%= @contact.first_name %> <%= @contact.last_name %>
-  </p>
-<!--   <p>
+<p>company:  <%= link_to @contact.company.name, company_path(@contact.company_id) %>
+  <ol>
+    <li id='full-name'>full_name:   <%= @contact.first_name %> <%= @contact.last_name %>
+    </li>
+  </ol>
+</p>
+  <!--   <p>
     role:  <%#= @contact.role %>
   </p>
   <p>
