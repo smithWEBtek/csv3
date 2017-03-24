@@ -15,5 +15,9 @@ class ToolsController < ApplicationController
   def new_scrape
     redirect_to 'scrapers/new'
   end
+
+  def test
+    render 'test'
+  end
  
 end

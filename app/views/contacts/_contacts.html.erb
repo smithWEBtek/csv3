@@ -1,0 +1,16 @@
+<table>
+  <th>
+    <tr>
+      <td>company</td>
+      <td>first_name</td>
+      <td>last_name</td>
+    </tr>
+  </th>
+<% contacts.each do |contact| %>
+  <tr>
+    <td><%= link_to contact.company.name, company_path(contact.company_id) %></td>
+    <td><%= contact.first_name %></td>
+    <td><%= contact.last_name %></td>
+  </tr>
+<% end %>
+</table>
