@@ -11,7 +11,7 @@
   </head>
 
   <body>
-
+  <div align="center">
 <%= link_to "Index Companies", companies_path, class: 'load_companies' %> | 
 <%= link_to "Import Companies", import_new_companies_path %> | 
 <%= link_to "Truncate Companies", trunc_reset_path %>
@@ -25,7 +25,8 @@ Ajax contacts:
 <%= link_to "Actions", actions_path %>
 <hr>
 <%= link_to "Tools", root_path %> 
-
     <%= yield %>
+
+</div>
   </body>
 </html>
