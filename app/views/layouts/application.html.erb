@@ -3,30 +3,19 @@
   <head>
     <title>Csv3</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'bootstrap' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'tools' %>
   </head>
-
   <body>
-  <div align="center">
-<%= link_to "Index Companies", companies_path, class: 'load_companies' %> | 
-<%= link_to "Import Companies", import_new_companies_path %> | 
-<%= link_to "Truncate Companies", trunc_reset_path %>
-<hr>
-Ajax contacts:
-<div id='ajax-contacts'></div>
-<hr>
-<%= link_to "Contacts", contacts_path, class: 'load_contacts', remote: true  %> | 
-<%= link_to "New contact", new_contact_path %> | 
-<%= link_to "Jobs", jobs_path %> | 
-<%= link_to "Actions", actions_path %>
-<hr>
-<%= link_to "Tools", root_path %> 
-    <%= yield %>
-
-</div>
+    <div class="container">
+      <div align="left">
+      <hr>
+      <%= render partial: 'layouts/main_nav' %>
+      <hr>
+      <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

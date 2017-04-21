@@ -1,5 +1,11 @@
 class ToolsController < ApplicationController
 
+  def bookmarks
+    Scrape.bookmarks
+    render :bookmarks
+  end
+
+
 # import companies from scraper
   def import_new_companies
     Scrape.new_companies

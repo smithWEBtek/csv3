@@ -1,51 +1,49 @@
 class CompaniesController < ApplicationController
+  before_action :set_company, only: [:show, :edit, :update, :destroy]
+
   def index
-    @companies = Company.all.order(:name)
-    render json: @companies
+    @companies = Company.all 
   end
 
   def show
-    @company = Company.find_by_id(params[:id])
   end
 
   def new
     @company = Company.new
   end
+  
+  def edit
+  end
+
+  def update
+    @company.update(company_params)
+    if @company.save
+      redirect_to company_path(@company), message: "Company updated."
+    else
+      render :edit, message: "Company NOT updated, please try again."
+    end
+  end
 
   def create
     @company = Company.new(company_params)
     if @company.save
-      flash[:message] = 'Company created.'
-      redirect_to company_path(@company)
+      redirect_to company_path(@company), message: "Company created."
     else
-      render :new
-    end
-  end
-
-  def edit
-    @company = Company.find_by_id(params[:id])
-  end
-
-  def update
-    @company = Company.find_by_id(params[:id])
-    @company.update(company_params)
-    if @company.save
-      flash[:message] = 'Company updated.'
-      redirect_to company_path(@company)
-    else
-      render :edit
+      render :new, message: "Company NOT created, please try again."
     end
   end
 
   def destroy
-    @company = Company.find_by_id(params[:id])
-    @company.destroy
-    redirect_to root_path
+    @company.delete
+    redirect_to companies_path
   end
 
   private
+    def set_company
+      @company = Company.find_by_id(params[:id])
+    end
 
-  def company_params
-    params.require(:company).permit(:name, :about, :city, :state, :url, :employees, :revenue, :age)
-  end
+    def company_params
+      params.require(:company).permit(:name, :about, :url, :city, :state)
+    end
 end

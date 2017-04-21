@@ -1,7 +1,5 @@
 class Company < ApplicationRecord
   has_many :contacts
-  has_many :actions
-  has_many :jobs
   
   def self.import(list)
     list.each do |company|

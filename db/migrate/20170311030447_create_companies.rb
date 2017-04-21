@@ -6,9 +6,6 @@ class CreateCompanies < ActiveRecord::Migration[5.0]
       t.string :city
       t.string :state
       t.string :url
-      t.integer :employees
-      t.integer :revenue
-      t.integer :age
 
       t.timestamps
     end

@@ -26,8 +26,23 @@ class Scrape < ApplicationRecord
     @url_suffix = @parse_page.css('.pager-next a')[0]['href']
     new_companies(@url_prefix + @url_suffix)
   end
-end
 
+
+def self.bookmarks
+  @bookmarks = []
+  page = HTTParty.get("https://swt-v3.herokuapp.com/bookmarks")
+  @parse = Nokogiri::HTML(page)
+  refs = @parse.css('a').each do |item|
+          ref = {
+      name: item.text, 
+      link: item.values.first
+      }
+      @bookmarks.push(ref)
+    end
+    @bookmarks
+    binding.pry
+  end
+end
 
 
   # def city_state_country_phone(devcos)
