@@ -1,21 +1,18 @@
 class ContactsController < ApplicationController
   def index
     @contacts = Contact.all
-    render 'contacts/index', layout: false
     render layout: false
-    render json: @contacts
+    # render json: @contacts
   end
 
   def show
     @contact = Contact.find_by_id(params[:id])
-    render 'contacts/show', layout: false
     render layout: false
-    render json: @contact
+    # render json: @contact
   end
 
   def new
     @contact = Contact.new
-    # @company = Company.new
   end
 
   def create
@@ -50,8 +47,7 @@ class ContactsController < ApplicationController
   end
 
   private
-
-  def contact_params
-    params.require(:contact).permit(:company_id, :username, :email, :password)
-  end
+		def contact_params
+			params.require(:contact).permit(:company_id, :username, :email, :password)
+		end
 end
