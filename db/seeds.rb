@@ -3,7 +3,7 @@ DATA_companies = {
     ["name", "city", "state", "url", "about"],
   :companies => [
     ["Network", "hometown", "homestate", "me.com", "about me"],
-    ["Acme", "Albany", "NY", "http://www.acme.com", "Coyote is after you."],
+    ["Acme", "Albany", "NY", "http://www.acme.com", "Coyote is after you!"],
     ["Sears", "Clifton", "NJ", "http://www.sears.com", "Everyting for the home."],
     ["Walmart", "Bentonville", "AK", "http://www.walmart.com", "Always the low price."],
     ["Ace Hardware", "Tulsa", "OK", "http://www.acehardware.com", "Ace is the place for the helpful hardware mammal."],
