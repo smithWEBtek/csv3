@@ -19,7 +19,7 @@ class Pdf < ApplicationRecord
     end
   end
 
-  def import_pdfs
+  def import_pdf
     # magic ruby code that adds a pdf to the app/assets/pdfs folder 
     # using the 'new' form, and the 'file_field' form helper
   end
